@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 import sys
-def run():
+
+
+def main():
     list_arguments = sys.argv
-    add = 0
-    for cnt in range(1, len(list_arguments)):
-        add += int(list_arguments[cnt])
-    print("{}".format(add))
+    sum = 0
+    for count in range(1, len(list_arguments)):
+        sum += int(list_arguments[count])
+    print("{}".format(sum))
+
+
 if __name__ == "__main__":
-    run()
+    main()
