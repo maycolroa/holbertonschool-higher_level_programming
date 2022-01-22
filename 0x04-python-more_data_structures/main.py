@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-search_replace = __import__('1-search_replace').search_replace
+common_elements = __import__('3-common_elements').common_elements
 
-my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
-new_list = search_replace(my_list, 2, 89)
+set_1 = { "Python", "C", "Javascript" }
+set_2 = { "Bash", "C", "Ruby", "Perl" }
+c_set = common_elements(set_1, set_2)
+print(sorted(list(c_set)))
 
-print(new_list)
-print(my_list)
