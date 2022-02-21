@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Write a class"""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """class"""
+    """class tectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
