@@ -5,7 +5,7 @@
 class Rectangle:
     """class tectangle"""
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
     """increments with every instantitation,
         decrements with every deletion"""
     def __init__(self, width=0, height=0):
