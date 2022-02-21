@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Class """
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
 
-    """ Defines a rectangle"""
+    """class tectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-
+        """Initializes a Rectangle instance"""
     def area(self):
         return self.__width * self.__height
 
