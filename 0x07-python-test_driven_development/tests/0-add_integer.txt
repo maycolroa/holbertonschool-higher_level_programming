@@ -1,0 +1,57 @@
+======================
+
+import
+
+======================
+
+   >>> add_integer = __import__('0-add_integer').add_integer
+
+======================
+   test 1
+   >>> print(add_integer(7, 3))
+   10
+
+   test 2
+   >>> print(add_integer(8, 10))
+   18
+
+   test 3
+   >>> print(add_integer(8.56, 10))
+   18
+
+ test 4
+   >>> print(add_integer(school, 18))
+   Traceback (most recent call last):
+          ...
+     TypeError: a must be an integer
+
+   test 5
+   >>> print(add_integer(-8, 2))
+   -6
+
+   test 6
+   >>> print(add_integer(-2, -16))
+   -18
+
+   test 7
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+   test 8
+   >>> add_integer(None)
+      Traceback (most recent call last):
+      		...
+      TypeError: a must be an integer
+
+   test 9
+   >>> print(add_integer(-10, 2))
+   0
+
+   test 10
+   >>> print(add_integer(-10, ))
+   0
+
+   test 11
+   >>> print(add_integer(-10, ))
+   56
