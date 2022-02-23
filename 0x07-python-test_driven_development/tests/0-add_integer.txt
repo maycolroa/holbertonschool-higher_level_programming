@@ -19,6 +19,12 @@ import
    >>> print(add_integer(8.56, 10))
    18
 
+ test 4
+   >>> print(add_integer(luisa, 18))
+   Traceback (most recent call last):
+          ...
+     TypeError: a must be an integer
+
    test 5
    >>> print(add_integer(-8, 2))
    -6
@@ -32,6 +38,12 @@ import
     Traceback (most recent call last):
     TypeError: a must be an integer
 
+   test 8
+   >>> add_integer(None)
+      Traceback (most recent call last):
+      		...
+      TypeError: a must be an integer
+
    test 9
    >>> print(add_integer(-10, 2))
    0
@@ -43,3 +55,9 @@ import
    test 11
    >>> print(add_integer(-10, ))
    56
+   
+   test 12
+   >>> add_integer(None , 10)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
