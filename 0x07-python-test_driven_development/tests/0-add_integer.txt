@@ -20,10 +20,10 @@ import
    18
 
  test 4
-   >>> print(add_integer("luisa", 18))
-   Traceback (most recent call last):
-          ...
-     TypeError: a must be an integer
+  >>> add_integer("work", 18)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
 
    test 5
    >>> print(add_integer(-8, 2))
