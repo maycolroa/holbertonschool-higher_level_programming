@@ -20,7 +20,7 @@ import
    18
 
  test 4
-   >>> print(add_integer(luisa, 18))
+   >>> print(add_integer(andrea, 18))
    Traceback (most recent call last):
           ...
      TypeError: a must be an integer
