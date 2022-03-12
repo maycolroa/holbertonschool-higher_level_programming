@@ -29,27 +29,27 @@ Checking for empty list:
 	 []
 
 Checking that appendng works:
-	 >>> l.append(4)
-	 >>> l.append(3)
-	 >>> l.append(2)
-	 >>> l.append(1)
-	 >>> print(l)
-	 [4, 3, 2, 1]
-
-Checking for list already in correct order:
-	 >>> l.print_sorted()
-	 [4, 3, 2, 1]
-
-Checking for reversed order list:
-	 >>> l = MyList()
 	 >>> l.append(1)
 	 >>> l.append(2)
 	 >>> l.append(3)
 	 >>> l.append(4)
 	 >>> print(l)
 	 [1, 2, 3, 4]
+
+Checking for list already in correct order:
 	 >>> l.print_sorted()
+	 [1, 2, 3, 4]
+
+Checking for reversed order list:
+	 >>> l = MyList()
+	 >>> l.append(4)
+	 >>> l.append(3)
+	 >>> l.append(2)
+	 >>> l.append(1)
+	 >>> print(l)
 	 [4, 3, 2, 1]
+	 >>> l.print_sorted()
+	 [1, 2, 3, 4]
 	 >>> print(l)
 	 [1, 2, 3, 4]
 
