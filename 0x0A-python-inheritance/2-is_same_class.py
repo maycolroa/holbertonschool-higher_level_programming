@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""MyList Class"""
+"""Attributes and Methods"""
 
 
 def is_same_class(obj, a_class):
