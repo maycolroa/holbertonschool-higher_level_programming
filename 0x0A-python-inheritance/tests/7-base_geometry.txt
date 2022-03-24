@@ -3,91 +3,115 @@
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 ==================== Principal requirements checkers ====================
+Importing the function from the module:
+        >>> BG = __import__("7-base_geometry").BaseGeometry
 
+Checking for module docstring:
+         >>> m = __import__("7-base_geometry").__doc__
+         >>> len(m) > 1
+         True
 
-	---------- Check that the file is executable ----------
-	>>> import os
-	>>> os.access('7-base_geometry.py', os.X_OK)
-	True
+Checking for class docstring:
+         >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(c) > 1
+         True
 
-	---------- Check for the documentation of the module ----------
-	>>> len(__import__("7-base_geometry").__doc__) > 10
-	True
+Checking for method docstring:
+	 >>> mod1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	 >>> len(mod1) > 1
+	 True
+	 >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+         >>> len(mod2) > 1
+         True
 
-	---------- Check for the documentation of the function ----------
-	>>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 10
-	True
+Checking for area failure:
+	 >>> b = BG()
+	 >>> b.area()
+	 Traceback (most recent call last):
+	 ...
+	 Exception: area() is not implemented
 
-	---------- Check for pep8 style ----------
-	>>> os.popen("7-base_geometry.py").read()
-	''
+Checking too many arguments for area:
+	 >>> b.area(1)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: area() takes 1 positional argument but 2 were given
 
-	---------- Check for a newline at the end of the file ----------
-	>>> os.popen("cat -e 7-base_geometry.py | tail -1").read()[-1]
-	'\n'
+Checking integer validator for passing integer:
+	 >>> b.integer_validator("integer", 1)
 
-	---------- Check for the file has a shebang ----------
-	>>> os.popen("cat 7-base_geometry.py | head -1").read()
-	'#!/usr/bin/python3\n'
+Checking for integer == 0:
+	 >>> b.integer_validator("integer", 0)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
 
-	---------- Check that the README file exists ----------
-	>>> cwd = os.getcwd()
-	>>> check_readme = cwd + '/README.md'
-	>>> os.path.exists(check_readme)
-	True
+Checking for integer < 0;
+	 >>> b.integer_validator("integer", -5)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
 
+Checking for non-integer types:
+	 >>> b.integer_validator("bool", True)
+	 Traceback (most recent call last):
+         ...
+         TypeError: bool must be an integer
+	 >>> b.integer_validator("float", 1.5)
+         Traceback (most recent call last):
+         ...
+         TypeError: float must be an integer
+	 >>> b.integer_validator("complex", complex(1, 1))
+         Traceback (most recent call last):
+         ...
+         TypeError: complex must be an integer
+	 >>> b.integer_validator("string", "hello")
+         Traceback (most recent call last):
+         ...
+         TypeError: string must be an integer
+	 >>> b.integer_validator("tuple", (1, 2))
+         Traceback (most recent call last):
+         ...
+         TypeError: tuple must be an integer
+	 >>> b.integer_validator("list", [1, 2, 3])
+	 Traceback (most recent call last):
+         ...
+         TypeError: list must be an integer
+	 >>> b.integer_validator("dict", {"key": "value"})
+         Traceback (most recent call last):
+         ...
+         TypeError: dict must be an integer
+	 >>> b.integer_validator("set", {"hello", "world"})
+         Traceback (most recent call last):
+         ...
+         TypeError: set must be an integer
+	 >>> b.integer_validator("frozenset", frozenset(["hello", "world"]))
+         Traceback (most recent call last):
+         ...
+         TypeError: frozenset must be an integer
+	 >>> b.integer_validator("bytes", b"bytes")
+         Traceback (most recent call last):
+         ...
+         TypeError: bytes must be an integer
+	 >>> b.integer_validator("bytearrays", bytearray(b"bytes"))
+         Traceback (most recent call last):
+         ...
+         TypeError: bytearrays must be an integer
 
-==================== Simple test ====================
+Checking for no arguments to integer_validator:
+	 >>> b.integer_validator()
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+Checking for only 1 argument to integer_validator:
+	 >>> b.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("integer", 6)
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("integer", -6)
-	Traceback (most recent call last):
-		...
-	ValueError: score must be greater than 0
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("maycol", 0)
-	Traceback (most recent call last):
-		...
-	ValueError: Sergio must be greater than 0
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("higher", "School")
-	Traceback (most recent call last):
-		...
-	TypeError: Holberton must be an integer
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("list", [1, 2, 3])
-	Traceback (most recent call last):
-		...
-	TypeError: My_list_int must be an integer
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("Tuples", (1, 2))
-	Traceback (most recent call last):
-		...
-	TypeError: Tuples must be an integer
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("set", {1, 2, 3, 4})
-	Traceback (most recent call last):
-		...
-	TypeError: My_set must be an integer
-
-
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("My_dict", {"maycol": 30, "paola": 35, "ale": 23})
-	Traceback (most recent call last):
-		...
-	TypeError: My_dict must be an integer
+Checking for too many arguments:
+	 >>> b.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
