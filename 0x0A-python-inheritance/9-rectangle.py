@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """Declare a Rectangle based"""
+    """class BaseGeometry"""
 
     pass
 
@@ -13,7 +13,7 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """function"""
+        """subclass"""
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
@@ -23,7 +23,7 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
-        """__init__"""
+        """subclass"""
         self.integer_validator("width", width)
         self.__width = width
 
@@ -35,5 +35,5 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """__str__"""
+        """subclass"""
         return("[Rectangle] {}/{}".format(self.__width, self.__height))
