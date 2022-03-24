@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""Write an class"""
+"""class BaseGeometry"""
 
 
 class BaseGeometry:
-    """Class that defines a shape"""
+    """class BaseGeometry"""
 
     pass
 
     def area(self):
-        """Calculates Area"""
+        """Area"""
 
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """function valide type object"""
+        """function"""
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
@@ -24,7 +24,7 @@ class Rectangle(BaseGeometry):
     """Class BaseGeometry"""
 
     def __init__(self, width, height):
-        """Initializes the subclass"""
+        """subclass"""
         self.integer_validator("width", width)
         self.__width = width
 
@@ -32,9 +32,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """return area of rectangule"""
+        """return area"""
         return self.__width * self.__height
 
     def __str__(self):
-        """define description a rectangule"""
+        """define rectangule"""
         return("[Rectangle] {}/{}".format(self.__width, self.__height))
