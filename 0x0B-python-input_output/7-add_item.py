@@ -24,8 +24,9 @@ def add_items():
             counter.append(argv[j])
 
     """ Write file """
-    
+
     save_to_json_file(counter, "add_item.json")
+
 
 if __name__ == "__main__":
     add_items()
