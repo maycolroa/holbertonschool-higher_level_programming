@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""the function"""
+"""the function """
 from sys import argv
 
 
@@ -9,8 +9,8 @@ load_from_json = __import__('6-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 
 try:
-    counter = load_from_json_file(filename)
+    content = load_from_json_file(filename)
 except:
-    counter = []
+    content = []
 
-save_from_json(counter + argv[1:], filename)
+save_from_json(content + argv[1:], filename)
