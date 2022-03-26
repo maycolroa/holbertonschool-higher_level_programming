@@ -12,22 +12,16 @@ class Student:
 
     def to_json(self, attrs=None):
         """dictionary representation of a Student"""
-
-        my__dict__studen = {}
         if attrs is not None:
+            dict_counter = {}
+            for j in self.__dict__:
+                if j in attrs:
+                    dict_counter[j] = self.__dict__[j]
+            return dict_counter
+        else:
             return self.__dict__
-        for counter in attrs:
-            if counter in self.__dict__.keys():
-                my_dict[counter] = self.__dict__[counter]
-        return my_dict
 
     def reload_from_json(self, json):
-        """Public method that replaces all
-        counteributes of the Student instance"""
-
-        my_old_dict = self.__dict__
-        for counter in json.keys():
-            for my_old_counter in my_old_dict.keys():
-                if counter == my_old_counter:
-                    my_old_dict[my_old_counter] = json[counter]
-            return my_old_dict
+        """Replaces all attributes"""
+        if json:
+            self.__dict__ = json
