@@ -12,7 +12,8 @@ def append_after(filename="", search_string="", new_string=""):
 
         while intercom < len(counter):
             if search_string in counter[intercom]:
-                counter[intercom:intercom + 1] = [counte[intercom], new_string]
+                counter[intercom:intercom + 1] = [counte
+                [intercom], new_string]
                 intercom += 1
             intercom += 1
 
