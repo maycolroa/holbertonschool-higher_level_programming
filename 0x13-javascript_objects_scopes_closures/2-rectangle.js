@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// class Rectangle.
+// class Rectangle..
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 & h > 0) {
