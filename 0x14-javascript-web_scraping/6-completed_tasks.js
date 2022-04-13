@@ -10,7 +10,7 @@ request(process.argv[2], function (err, response, body) {
         if (aux[json[j].userId] === undefined) {
           aux[json[j].userId] = 0;
         }
-        aux[json[i].userId]++;
+        aux[json[j].userId]++;
       }
     }
     console.log(aux);
