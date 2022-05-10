@@ -19,6 +19,7 @@ if __name__ == "__main__":
                 ORDER BY id ASC
                 """
     for j in cur.fetchall():
-        print(j)
+        if j[1][0] == 'N':
+            print(j)
     cur.close()
     db.close()
