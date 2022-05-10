@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write a script that lists all states from the database"""
+"""Write a script that lists all states with a name starting with N"""
 
 
 if __name__ == "__main__":
@@ -12,14 +12,12 @@ if __name__ == "__main__":
             passwd=argv[2],
             db=argv[3])
     cur = db.cursor()
-    cur.execute("""
-                SELECT *
-                FROM states
-                WHERE name LIKE BINARY 'N%'
-                ORDER BY id ASC
-                """
-    for j in cur.fetchall():
-        if j[1][0] == 'N':
-            print(j)
+    cur.execute("SELECT * from states\
+                WHERE name LIKE 'N%'\
+                ORDER BY states.id")
+    query = cur.fetchall()
+    for i in query:
+        if i[1][0] == 'N':
+            print(i)
     cur.close()
     db.close()
