@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write a script that takes in an argument and displays all values in the states table"""
+"""Write a script that takes in an argument and displays"""
 
 
 if __name__ == "__main__":
