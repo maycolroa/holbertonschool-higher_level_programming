@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Write a Python script that fetches"""
+
+
 def main():
     import urllib.request
     with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
