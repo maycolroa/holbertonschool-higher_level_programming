@@ -4,8 +4,7 @@
 
 from requests import get, auth
 import sys
-
-def main():
+if __name__ == "__main__":
     try:
         repo = sys.argv[1]
         owner = sys.argv[2]
@@ -17,5 +16,3 @@ def main():
                                   .get('author').get('name')))
     except:
         pass
-if __name__ == "__main__":
-    main()
