@@ -3,7 +3,6 @@
 
 
 def main():
-    """ Main Function """
     import urllib.request
     from sys import argv
     url = argv[1]
